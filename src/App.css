@@ -46,6 +46,63 @@ html, body, #root {
   .theme-blue-night { background-image: url('/bg-blue-desktop.jpg'); }
 }
 
+.theme-red {
+  --primary-text: #e8d08d; 
+  --secondary-text: #c4b077;
+  --border-color: #dfba78;
+  --mic-image: url('/public/Microphone/red.png'); 
+  
+  --input-bg: linear-gradient(135deg, #fdf3e1 0%, #dfba78 100%);
+  --input-text: #1a1103; 
+  
+  background-image: url('/bg-red-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (min-width: 768px) {
+  .theme-red { background-image: url('/bg-red-desktop.jpg'); }
+}
+
+.theme-elegant {
+  --primary-text: #e8d08d; 
+  --secondary-text: #c4b077;
+  --border-color: #dfba78;
+  --mic-image: url('/public/Microphone/white.png'); 
+  
+  --input-bg: linear-gradient(135deg, #fdf3e1 0%, #dfba78 100%);
+  --input-text: #1a1103; 
+  
+  background-image: url('/bg-elegant-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (min-width: 768px) {
+  .theme-elegant { background-image: url('/bg-elegant-desktop.jpg'); }
+}
+
+.theme-orange {
+  --primary-text: #e8d08d; 
+  --secondary-text: #c4b077;
+  --border-color: #dfba78;
+  --mic-image: url('/public/Microphone/orange.png'); 
+  
+  --input-bg: linear-gradient(135deg, #fdf3e1 0%, #dfba78 100%);
+  --input-text: #1a1103; 
+  
+  background-image: url('/bg-orange-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (min-width: 768px) {
+  .theme-orange { background-image: url('/bg-orange-desktop.jpg'); }
+}
+
 
 .app-wrapper {
   min-height: 100vh;
@@ -347,6 +404,21 @@ h1 {
   background-color: var(--border-color);
   color: #0b132b; 
   font-weight: 600;
+}
+
+.mode-switch-btn {
+  background: #dfba78;
+  color: #1a1103;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 15px;
 }
 
 .retake-btn:hover, .send-btn:hover {

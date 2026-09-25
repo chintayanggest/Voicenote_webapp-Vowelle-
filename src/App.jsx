@@ -9,21 +9,24 @@ function App() {
   const [uploadStatus, setUploadStatus] = useState('');
   const [guestName, setGuestName] = useState('');
   
-  const [currentTheme, setCurrentTheme] = useState('green');
+  const [currentTheme, setCurrentTheme] = useState('blue');
   useEffect(() => {
-    // Membaca URL Path (misalnya "/blue" atau "/green")
     const path = window.location.pathname.toLowerCase();
     const searchParams = new URLSearchParams(window.location.search);
     const themeQuery = searchParams.get('theme')?.toLowerCase() || "";
 
     if (path.includes('green') || themeQuery.includes('green') || themeQuery.includes('botanical')) {
-      setCurrentTheme('botanical');
+      setCurrentTheme('green');
     } else if (path.includes('blue') || themeQuery.includes('blue') || themeQuery.includes('blue')) {
       setCurrentTheme('blue-night');
-    // } else if (path.includes('pink') || themeQuery.includes('pink') || themeQuery.includes('elegant')) {
-    //   setCurrentTheme('elegant');
-    // } else if (path.includes('brown') || themeQuery.includes('brown') || themeQuery.includes('rustic')) {
-    //   setCurrentTheme('rustic');
+    } else if (path.includes('red') || themeQuery.includes('red') || themeQuery.includes('red')) {
+      setCurrentTheme('red');
+    } else if (path.includes('orange') || themeQuery.includes('orange') || themeQuery.includes('orange')) {
+      setCurrentTheme('orange');
+    } else if (path.includes('white') || themeQuery.includes('white') || themeQuery.includes('elegant')) {
+      setCurrentTheme('elegant');
+    } else {
+      setCurrentTheme('blue'); 
     }
   }, []);
 
