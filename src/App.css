@@ -17,14 +17,14 @@ html, body, #root {
   --mic-image: url('/public/Microphone/green.png'); 
   --mic-bg-color: #1b3b24;
   
-  background-image: url('/bg-green-mobile.jpg');
+  background-image: url('/bg-botanical-mobile.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 @media (min-width: 768px) {
-  .theme-green { background-image: url('/bg-green-desktop.jpg'); }
+  .theme-green { background-image: url('/bg-botanical-desktop.jpg'); }
 }
 
 .theme-blue-night {
