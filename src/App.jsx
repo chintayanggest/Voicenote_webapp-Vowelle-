@@ -9,7 +9,8 @@ function App() {
   const [uploadStatus, setUploadStatus] = useState('');
   const [guestName, setGuestName] = useState('');
   
-  const [currentTheme, setCurrentTheme] = useState('blue');
+  const [currentTheme, setCurrentTheme] = useState('blue-night');
+
   useEffect(() => {
     const path = window.location.pathname.toLowerCase();
     const searchParams = new URLSearchParams(window.location.search);
@@ -26,7 +27,7 @@ function App() {
     } else if (path.includes('white') || themeQuery.includes('white') || themeQuery.includes('elegant')) {
       setCurrentTheme('elegant');
     } else {
-      setCurrentTheme('blue'); 
+      setCurrentTheme('blue-night'); 
     }
   }, []);
 
