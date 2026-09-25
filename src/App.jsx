@@ -169,7 +169,7 @@ function App() {
             </div>
 
             <button className="image-btn" onClick={() => setInputMode('text')}>
-              <img src="/public/WritingButton/gold.png" alt="✍️ Or write a me ➔" />
+              <img src="/gold.png" alt="✍️ Or write a message ➔" />
             </button>
           </>
         )}
