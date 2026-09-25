@@ -9,7 +9,7 @@ function App() {
   const [uploadStatus, setUploadStatus] = useState('');
   const [guestName, setGuestName] = useState('');
   
-  const [currentTheme, setCurrentTheme] = useState('blue-night'); 
+  const [currentTheme, setCurrentTheme] = useState('green'); 
   const [inputMode, setInputMode] = useState('audio'); 
   const [textMessage, setTextMessage] = useState('');
 
