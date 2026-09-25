@@ -86,7 +86,7 @@ html, body, #root {
   text-align: center;
   width: 100%;
   max-width: 500px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .ribbon-icon {
@@ -254,7 +254,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 .small-text {
   font-size: 11px;
@@ -285,7 +285,7 @@ h1 {
   color: var(--secondary-text);
   padding-bottom: 20px;
   letter-spacing: 0.5px;
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 @media (min-width: 768px) {

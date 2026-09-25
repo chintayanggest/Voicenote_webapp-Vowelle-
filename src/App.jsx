@@ -162,7 +162,7 @@ function App() {
               ></button>
               
               <p className="record-instruction">
-                {isRecording ? <span style={{color: '#d4af37', fontWeight: 'bold'}}>{formatTime(recordingTime)}</span> : 'Hold to record'}
+                {isRecording ? <span style={{color: '#d4af37', fontWeight: 'bold'}}>{formatTime(recordingTime)}</span> : 'Click to record'}
                 <br/>
                 <span className="small-text">(up to 60 seconds)</span>
               </p>
