@@ -13,7 +13,7 @@ function App() {
   const [weddingId, setWeddingId] = useState('Demo_Wedding');
   const displayWeddingName = weddingId === 'Demo_Wedding'
     ? 'Newlyweds'
-    : weddingId.replace(/_/g, '&');
+    : weddingId.replace(/_/g, ' & ');
 
   useEffect(() => {
     const path = window.location.pathname.toLowerCase();
@@ -112,14 +112,17 @@ function App() {
 
     const formData = new FormData();
     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-    formData.append("public_id", `${weddingId}/${safeName}_${timestamp}`);
+
+    const uniqueFileName = `${weddingId}-${safeName}_${timestamp}`;
+    
+    formData.append("public_id", uniqueFileName);
 
     if (inputMode === 'audio') {
-      formData.append("file", audioBlob, `${weddingId}/${safeName}_${timestamp}.webm`);
+      formData.append("file", audioBlob, `${uniqueFileName}.webm`);
       formData.append("resource_type", "video");
     } else {
       const textBlob = new Blob([textMessage], { type: 'text/plain' });
-      formData.append("file", textBlob, `${weddingId}/${safeName}_${timestamp}.txt`);
+      formData.append("file", textBlob, `${uniqueFileName}.txt`);
       formData.append("resource_type", "raw"); 
     }
 
@@ -136,9 +139,11 @@ function App() {
         setGuestName(''); 
         setInputMode('audio'); 
       } else {
+        console.error("Cloudinary Error:", data);
         setUploadStatus('❌ Gagal mengirim pesan.');
       }
     } catch (error) {
+      console.error("Network Error:", error);
       setUploadStatus('❌ Terjadi kesalahan jaringan.');
     } finally {
       setIsUploading(false);
