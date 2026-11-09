@@ -9,7 +9,7 @@ function App() {
   const [uploadStatus, setUploadStatus] = useState('');
   const [guestName, setGuestName] = useState('');
   
-  const [currentTheme, setCurrentTheme] = useState('blue-night');
+  const [currentTheme, setCurrentTheme] = useState('red');
   const [weddingId, setWeddingId] = useState('Demo_Wedding');
   const displayWeddingName = weddingId === 'Demo_Wedding'
     ? 'Newlyweds'
@@ -35,7 +35,7 @@ function App() {
     } else if (path.includes('white') || themeQuery.includes('white') || themeQuery.includes('elegant')) {
       setCurrentTheme('elegant');
     } else {
-      setCurrentTheme('blue-night'); 
+      setCurrentTheme('red'); 
     }
   }, []);
 
