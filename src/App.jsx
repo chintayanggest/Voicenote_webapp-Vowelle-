@@ -10,11 +10,19 @@ function App() {
   const [guestName, setGuestName] = useState('');
   
   const [currentTheme, setCurrentTheme] = useState('blue-night');
+  const [weddingId, setWeddingId] = useState('Demo_Wedding');
+  const displayWeddingName = weddingId === 'Demo_Wedding'
+    ? 'Newlyweds'
+    : weddingId.replace(/_/g, '&');
 
   useEffect(() => {
     const path = window.location.pathname.toLowerCase();
     const searchParams = new URLSearchParams(window.location.search);
     const themeQuery = searchParams.get('theme')?.toLowerCase() || "";
+    const weddingQuery = searchParams.get('wedding');
+    if(weddingQuery) {
+      setWeddingId(weddingQuery);
+    }
 
     if (path.includes('green') || themeQuery.includes('green') || themeQuery.includes('botanical')) {
       setCurrentTheme('green');
@@ -104,14 +112,14 @@ function App() {
 
     const formData = new FormData();
     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-    formData.append("public_id", `${safeName}_${timestamp}`);
+    formData.append("public_id", `${weddingId}/${safeName}_${timestamp}`);
 
     if (inputMode === 'audio') {
-      formData.append("file", audioBlob, `${safeName}_${timestamp}.webm`);
+      formData.append("file", audioBlob, `${weddingId}/${safeName}_${timestamp}.webm`);
       formData.append("resource_type", "video");
     } else {
       const textBlob = new Blob([textMessage], { type: 'text/plain' });
-      formData.append("file", textBlob, `${safeName}_${timestamp}.txt`);
+      formData.append("file", textBlob, `${weddingId}/${safeName}_${timestamp}.txt`);
       formData.append("resource_type", "raw"); 
     }
 
@@ -152,7 +160,7 @@ function App() {
       <main className="main-content">
         <div className="title-section">
           <div className="ribbon-icon">🎀</div>
-          <h1>Leave a Message <br/> for the <span className="script-text">Newlyweds</span></h1>
+          <h1>Leave a Message <br/> for the <span className="script-text">{displayWeddingName}</span></h1>
           <p className="subtitle">
             Your words, your voice, your wishes — <br/> 
             a special message that they'll keep forever.
